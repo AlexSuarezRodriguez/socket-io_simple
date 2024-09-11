@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  app:
+    container_name: ${APP_NAME}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app:rw
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+      TZ: ${TZ}
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
