@@ -1,79 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="HTML Masters" />
-    <title>Socker.IO</title>
+    <title>Chat con Socket.IO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light-gray">
+    <div class="container">
+        <h1 class="chat-title">Chat con Socket.IO</h1>
+        
+        <div id="login_form" class="login-form">
+            <div class="input-group">
+                <input type="email" id="correo" placeholder="Correo" class="input-field" required>
+                <input type="text" id="usuario" placeholder="Usuario" class="input-field" required>
+                <button onclick="getInto()" class="btn btn-blue">Entrar</button>
+            </div>
+        </div>
 
-    <style>
-      #cont_mensajes {
-        width: 50%;
-        background-color: antiquewhite;
-        border: solid 2px black;
-
-        p {
-          background-color: white;
-          padding: 5px;
-          margin: 10px;
-          border-radius: 5px;
-          border: solid 1px black;
-        }
-      }
-
-      #seccion_mensaje {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-
-        textarea {
-          width: 500px;
-        }
-        button {
-          height: 100%;
-          background-color: blue;
-          color: white;
-          padding: 10px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <h1>SOCKET.IO</h1>
-    <hr />
-    <form accept-charset="utf-8" id="login_form">
-      <input type="text" name="" id="correo" placeholder="Correo" value="" />
-      <input type="text" name="" id="usuario" placeholder="Usuario" value="" />
-      <input type="button" value="Entrar" onclick="getInto()" />
-    </form>
-    <p><br /></p>
-
-    <div id="cont_mensajes"></div>
-    <br />
-    <div id="seccion_mensaje">
-      <textarea id="mensaje" placeholder="Mensaje"></textarea>
-      <input type="text" id="receptor" name="" placeholder="destinatario"/>
-      <button type="button" id="enviar_mensaje" onclick="sendMessage()">
-        Enviar
-      </button>
+        <div id="chat_area" class="chat-area hidden">
+            <div id="cont_mensajes" class="chat-container"></div>
+            <div class="input-group">
+                <textarea id="mensaje" placeholder="Escribe tu mensaje..." class="input-field" rows="3"></textarea>
+                <input type="text" id="receptor" placeholder="Destinatario (opcional)" class="input-field-small">
+                <button onclick="sendMessage()" class="btn btn-green">Enviar</button>
+            </div>
+        </div>
     </div>
 
-    <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="functions_socket.js"></script>
-
-    <script>
-      const getInto = () => {
-        correo = $(`#login_form #correo`).val();
-        usuario = $(`#login_form #usuario`).val();
-        login(correo, usuario);
-      };
-      const sendMessage = () => {
-        mensaje = $(`#mensaje`).val();
-        receptor= $('#receptor').val();
-        enviar_msj(mensaje, usuario,receptor);
-      };
-    </script>
-  </body>
+</body>
 </html>

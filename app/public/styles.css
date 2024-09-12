@@ -1,0 +1,141 @@
+/* Estilos generales */
+body {
+  background-color: #f7fafc;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.chat-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.input-field {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: #3182ce;
+}
+
+.input-field-small {
+  width: 25%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-blue {
+  background-color: #4299e1;
+  color: white;
+}
+
+.btn-blue:hover {
+  background-color: #2b6cb0;
+}
+
+.btn-green {
+  background-color: #48bb78;
+  color: white;
+}
+
+.btn-green:hover {
+  background-color: #38a169;
+}
+
+/* Área del chat */
+.chat-area {
+  margin-top: 2rem;
+}
+
+.chat-container {
+  height: calc(100vh - 200px);
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+/* Mensajes */
+.message {
+  max-width: 80%;
+  word-wrap: break-word;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.message-self {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.message-other {
+  background-color: #f2f2f2;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.message .font-bold {
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.text-blue-700 {
+  color: #2b6cb0;
+}
+
+.text-green-700 {
+  color: #2f855a;
+}
+
+.bg-yellow-100 {
+  background-color: #fefcbf;
+}
+
+.text-yellow-700 {
+  color: #d69e2e;
+}
+
+/* Sistema de mensajes */
+.message-system {
+  background-color: #fefcbf;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
