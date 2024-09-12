@@ -53,6 +53,7 @@
     <br />
     <div id="seccion_mensaje">
       <textarea id="mensaje" placeholder="Mensaje"></textarea>
+      <input type="text" id="receptor" name="" placeholder="destinatario"/>
       <button type="button" id="enviar_mensaje" onclick="sendMessage()">
         Enviar
       </button>
@@ -70,7 +71,8 @@
       };
       const sendMessage = () => {
         mensaje = $(`#mensaje`).val();
-        enviar_msj(mensaje, usuario);
+        receptor= $('#receptor').val();
+        enviar_msj(mensaje, usuario,receptor);
       };
     </script>
   </body>

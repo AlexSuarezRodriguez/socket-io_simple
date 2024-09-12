@@ -12,6 +12,6 @@ const login=(correo,usuario)=>{
   socket.emit("datos_usuario", {correo,usuario});
 }
 
-const enviar_msj=(mensaje,usuario)=>{
-  socket.emit("enviar_mensaje", {mensaje, usuario});
+const enviar_msj=(mensaje,usuario,receptor=null)=>{
+  socket.emit("enviar_mensaje", {mensaje, usuario,receptor});
 }
